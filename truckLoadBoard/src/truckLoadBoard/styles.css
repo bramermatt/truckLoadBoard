@@ -1,6 +1,11 @@
 html {
 	margin: 0;
 	padding: .5em;
+	
+}
+
+body {
+	font-family: system-ui;
 }
 
 
@@ -40,6 +45,10 @@ nav {
 		    padding: 15px 20px;*/
 		    text-decoration: none;
 			border-radius: 5px;
+			
+			display: flex;
+			align-items: center;
+			gap: .5vw;
 		}
 		
 		li a:hover {
@@ -84,7 +93,6 @@ ul li:hover > a {  /* Add this line to keep parent hovered */
 	
 }
 
-/* Show dropdown on hover */
 li:hover #dropdown {
     display: block;
 	z-index: 5;
@@ -100,6 +108,17 @@ li:hover #dropdown {
 	z-index: 1;
 	
 	margin-top: 1vh;
+	
+	ul {
+		display: flex;
+		gap: 1vw;
+		/*align-items: center;*/
+	}
+	
+	ul li {
+		display: flex;
+		align-items: center;
+	}
 }
 
 footer {
@@ -114,6 +133,56 @@ footer {
 } 
 
 
+
+.two-columns {
+	max-width: 1800px;
+	margin: 0 auto;	
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1vw;
+}
+
+.column {
+	/*max-width: 800px;*/
+	/*margin: auto;*/
+}
+
+details {
+	/*border: thin solid;*/
+	border-radius: 5px;
+	/*max-width: 70ch;*/
+	padding: .5em;
+	margin-bottom: 1vh;
+	
+	a:link, a:visited {
+		color: white;
+	}
+	
+	summary {
+		/*border: thin solid;*/
+		border-radius: 5px;
+		/*max-width: 70ch;*/
+		padding: .5em;
+		cursor: pointer;
+	}
+}
+
+main {
+	padding: 0 1em;
+}
+
+header {
+	max-width: 1800px;
+	margin: 0 auto;
+	
+	h1 {
+		
+	}
+}
+
+
+
 @media screen and (prefers-color-scheme: dark) {
 	body {
 		background-color: rgb(45,45,45);
@@ -123,17 +192,27 @@ footer {
 	nav {
 		border: none;
 		background-color: rgb(65,65,65);
-		box-shadow: 0px 0px 2px black;
+		box-shadow: 0px 0px 4px black;
 		
 		ul li a {
 			color: white;
 			
 		}
+		
+
 	}
 	
-	#dropdown {
+	
+	#dropdown, details, summary {
 		background-color: rgb(65,65,65);
 		box-shadow: 0px 0px 2px black;
+	}
+	
+	details {
+		
+		summary:hover {
+			background-color: rgb(45,45,45);
+		}
 	}
 }
 
