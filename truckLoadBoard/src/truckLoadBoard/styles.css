@@ -1,0 +1,124 @@
+html {
+	margin: 0;
+	padding: .5em;
+}
+
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	/*gap: 1vw;*/
+	padding: 0;
+	border: thin solid lightgrey;
+	border-radius: 5px;
+
+	
+	
+	
+	ul {
+		display: flex;
+		flex-direction: row;
+		/*gap: 1vw;*/
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		
+		li {
+		    position: relative;
+		    display: inline-block;
+
+		}
+		
+		li a {
+		    display: block;
+			padding: .5em;
+		    /*color: white;
+		    padding: 15px 20px;*/
+		    text-decoration: none;
+			border-radius: 5px;
+		}
+		
+		li a:hover {
+		    background-color: black;
+			color: white;
+
+		}
+		
+		
+	}
+	
+}
+
+ul li a:hover,
+ul li:hover > a {  /* Add this line to keep parent hovered */
+    background-color: black;
+	color: white;
+}
+
+/* Dropdown content */
+#dropdown {
+    display: none;
+    position: absolute;
+    background-color: #eee;
+    min-width: 20ch;
+    z-index: 1;
+	flex-direction: column;
+	gap: 0;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px grey;
+	
+	li {
+	    display: block;
+	    text-align: left;
+	}
+	
+	li a {
+	    padding: .5em;
+		
+	}
+	
+	
+}
+
+/* Show dropdown on hover */
+li:hover #dropdown {
+    display: block;
+}
+
+footer {
+	
+	padding: .5em;
+	
+	img {
+		max-height: 10vh;
+		
+	}
+	
+} 
+
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-color: rgb(45,45,45);
+		color: white;
+	}
+	
+	nav {
+		border: none;
+		background-color: rgb(65,65,65);
+		box-shadow: 0px 0px 2px black;
+		
+		ul li a {
+			color: white;
+			
+		}
+	}
+	
+	#dropdown {
+		background-color: rgb(65,65,65);
+		box-shadow: 0px 0px 2px black;
+	}
+}
+
+
