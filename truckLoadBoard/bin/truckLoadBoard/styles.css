@@ -11,6 +11,9 @@ nav {
 	padding: 0;
 	border: thin solid lightgrey;
 	border-radius: 5px;
+	
+	max-width: 1600px;
+	margin: 0 auto;
 
 	
 	
@@ -84,6 +87,19 @@ ul li:hover > a {  /* Add this line to keep parent hovered */
 /* Show dropdown on hover */
 li:hover #dropdown {
     display: block;
+	z-index: 5;
+}
+
+#topNav {
+	z-index: 1;
+}
+
+#breadcrumbNav {
+	position: sticky;
+	top: 1vh;
+	z-index: 1;
+	
+	margin-top: 1vh;
 }
 
 footer {
