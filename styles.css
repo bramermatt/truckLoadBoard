@@ -1,0 +1,343 @@
+html {
+	margin: 0;
+	padding: .5em;
+	
+}
+
+body {
+	font-family: system-ui;
+}
+
+aside {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	max-width: 70ch;
+	float: right;
+	display: none;
+
+
+}
+
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	/*gap: 1vw;*/
+	padding: 0;
+	/* border: thin solid lightgrey; */
+	border-radius: 10px 10px 0 0;
+	
+	max-width: 1400px;
+	margin: 0 auto;
+
+	
+	
+	
+	ul {
+		display: flex;
+		flex-direction: row;
+		/*gap: 1vw;*/
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		
+		li {
+		    position: relative;
+		    display: inline-block;
+
+		}
+		
+		li a {
+		    display: block;
+			padding: .5em;
+		    /*color: white;
+		    padding: 15px 20px;*/
+		    text-decoration: none;
+			border-radius: 5px;
+			
+			display: flex;
+			align-items: center;
+			gap: .5vw;
+		}
+		
+		li a:hover {
+		    background-color: black;
+			color: white;
+
+		}
+		
+		
+	}
+	
+}
+
+nav ul li a:hover,
+nav ul li:hover > a {  /* Add this line to keep parent hovered */
+    background-color: black;
+	color: white;
+}
+
+/* Dropdown content */
+#dropdown {
+    display: none;
+    position: absolute;
+    background-color: #eee;
+    min-width: 20ch;
+    z-index: 1;
+	flex-direction: column;
+	gap: 0;
+	border-radius: 5px;
+	box-shadow: 0px 0px 3px grey;
+	
+	li {
+	    display: block;
+	    text-align: left;
+	}
+	
+	li a {
+	    padding: .5em;
+		
+	}
+	
+	
+}
+
+nav li:hover #dropdown {
+    display: block;
+	z-index: 5;
+}
+
+#topNav {
+	z-index: 1;
+}
+
+#breadcrumbNav {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	
+	/* margin-top: 1vh; */
+
+	border-radius: 0 0 10px 10px;
+	
+	ul {
+		display: flex;
+		gap: 1vw;
+		/*align-items: center;*/
+	}
+	
+	ul li {
+		display: flex;
+		align-items: center;
+	}
+}
+
+
+/* Style for the mobile menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Full-screen overlay with transparency */
+    display: none; /* Hidden by default */
+    z-index: 999; /* Ensure it is above other content */
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 50px; /* Adjust to your needs */
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/* Style for the menu button */
+#menubutton {
+    /* font-size: 30px; */
+    cursor: pointer;
+}
+
+/* When the menu is open, hide the scrollbar */
+body.menu-open {
+    overflow: hidden;
+}
+
+
+footer {
+	
+	padding: .5em;
+	
+
+	
+} 
+
+
+
+.two-columns {
+	max-width: 1600px;
+	margin: 0 auto;	
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1vw;
+}
+
+.column {
+	/*max-width: 800px;*/
+	/*margin: auto;*/
+}
+
+details {
+	/*border: thin solid;*/
+	border-radius: 5px;
+	/*max-width: 70ch;*/
+	padding: .5em;
+	margin-bottom: 1vh;
+	
+	a:link, a:visited {
+		color: white;
+	}
+	
+	summary {
+		/*border: thin solid;*/
+		border-radius: 5px;
+		/*max-width: 70ch;*/
+		padding: .5em;
+		cursor: pointer;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0 1em;
+
+		li {
+			margin-bottom: 1vh;
+		}
+	}
+}
+
+main {
+	padding: 1em;
+}
+
+header {
+	max-width: 1600px;
+	margin: 0 auto;
+	
+	
+	img {
+		max-height: 10vh;
+		
+	}
+
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+	#topNav {
+		display: none;
+	}
+
+	.two-columns {
+		grid-template-columns: 1fr;
+		padding: .5em 1em;
+	}
+
+	main {
+		padding: 0;
+	}
+
+
+	html, body {
+		padding: 0;
+		margin: 0;
+	}
+
+	
+}
+
+@media screen and (prefers-color-scheme: light) {
+	nav {
+		border: none;
+		background-color: rgb(230, 230, 230);
+		box-shadow: 0px 0px 3px rgb(117, 117, 117);
+		
+		ul li a {
+			color: black;
+			
+		}
+		
+
+	}
+	
+	
+	#dropdown, details, summary {
+		background-color: rgb(255, 255, 255);
+		box-shadow: 0px 0px 2px rgb(117, 117, 117);
+	}
+	
+	details {
+
+		a:link, a:visited {
+			color: rgb(37, 37, 37);
+		}
+		
+		summary:hover {
+			background-color: rgb(45,45,45);
+			color: white;
+		}
+	}
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		background-color: rgb(45,45,45);
+		color: white;
+	}
+	
+	nav {
+		border: none;
+		background-color: rgb(65,65,65);
+		box-shadow: 0px 0px 4px black;
+		
+		ul li a {
+			color: white;
+			
+		}
+		
+
+	}
+	
+	
+	#dropdown, details, summary {
+		background-color: rgb(65,65,65);
+		box-shadow: 0px 0px 2px black;
+	}
+	
+	details {
+		
+		summary:hover {
+			background-color: rgb(45,45,45);
+		}
+	}
+}
+
+
