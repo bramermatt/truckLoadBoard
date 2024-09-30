@@ -8,16 +8,107 @@ body {
 	font-family: system-ui;
 }
 
+
+/* old aside 
 aside {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 
+	padding: 0 1em;
 	max-width: 70ch;
 	float: right;
-	display: none;
 
 
+
+
+}
+
+#sideNav {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    padding: 0 2em;
+    box-shadow: 0px 0 5px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+
+	overflow: auto;
+  }
+
+  #sideNav a:visited, a:link {
+    color: white;
+  }
+
+  #sideNav a:hover {
+	text-decoration: none;
+  }
+
+  #sideNav.active {
+    display: block;
+  }
+*/
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    /* background-color: #fefefe; */
+    margin: 1% auto; /* 15% from the top and centered */
+    padding: 2em;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+
+	border-radius: 10px;
+
+	a:visited, a:link {
+		color: rgb(0, 0, 0);
+	  }
+
+
+	h2 {
+		margin: 1em 0 .5em;
+		padding: 0;
+	}
+
+	ul {
+		margin: 0;
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 2vh;
+		}
+	}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -25,7 +116,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	/*gap: 1vw;*/
-	padding: 0;
+	padding: .5em;
 	/* border: thin solid lightgrey; */
 	border-radius: 10px 10px 0 0;
 	
@@ -68,6 +159,10 @@ nav {
 			color: white;
 
 		}
+
+		/* .fa, i {
+			font-size: 3vh;
+		} */
 		
 		
 	}
@@ -135,47 +230,6 @@ nav li:hover #dropdown {
 	}
 }
 
-
-/* Style for the mobile menu */
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Full-screen overlay with transparency */
-    display: none; /* Hidden by default */
-    z-index: 999; /* Ensure it is above other content */
-}
-
-.mobile-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    margin-top: 50px; /* Adjust to your needs */
-}
-
-.mobile-menu ul li {
-    margin: 20px 0;
-}
-
-.mobile-menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-}
-
-/* Style for the menu button */
-#menubutton {
-    /* font-size: 30px; */
-    cursor: pointer;
-}
-
-/* When the menu is open, hide the scrollbar */
-body.menu-open {
-    overflow: hidden;
-}
 
 
 footer {
@@ -247,6 +301,16 @@ header {
 
 }
 
+table {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-self: center;
+
+	padding: .5em 0;
+	margin: 10px;
+}
+
 
 
 
@@ -270,14 +334,19 @@ header {
 		margin: 0;
 	}
 
+	.modal-content {
+		width: 80%;
+		max-width: 90%;
+	}
+
 	
 }
 
 @media screen and (prefers-color-scheme: light) {
 	nav {
 		border: none;
-		background-color: rgb(230, 230, 230);
-		box-shadow: 0px 0px 3px rgb(117, 117, 117);
+		background-color: rgb(255, 255, 255);
+		box-shadow: 0px 2px 3px rgb(117, 117, 117);
 		
 		ul li a {
 			color: black;
@@ -285,6 +354,15 @@ header {
 		}
 		
 
+	}
+
+	.modal-content {
+		background-color: rgb(255, 255, 255);
+		border: none;
+
+		a:visited, a:link {
+			color: rgb(0, 0, 0);
+		  }
 	}
 	
 	
@@ -303,6 +381,7 @@ header {
 			background-color: rgb(45,45,45);
 			color: white;
 		}
+
 	}
 }
 
@@ -324,6 +403,15 @@ header {
 		}
 		
 
+	}
+
+	.modal-content {
+		background-color: rgb(65,65,65);
+		border: none;
+
+		a:visited, a:link {
+			color: white;
+		  }
 	}
 	
 	

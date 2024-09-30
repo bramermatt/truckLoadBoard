@@ -50,50 +50,51 @@ document.addEventListener("DOMContentLoaded", function() {
 	</nav>
 
 
-    	<aside id="sideNav">
-		<ul>
-			<li><a href="${basePath}index.html">Home</a></li>
+<!-- Modal Structure for Sidebar -->
+<div id="modalSideNav" class="modal">
+    <div class="modal-content"> 
+    <span class="close-button" id="closeModal">&times;</span>
 
-            <h2>Assignments</h2>
-				<ul>
-					<li><a href="#">To-Do</a></li>
-					<li><a href="#">Completed</a></li>
-				</ul>
+        <h2>Truck Load Board</h2>
+        <ul>
+            <li><a href="${basePath}index.html">Home</a></li>
+        </ul>
 
-                <h2>Dispatch Central</h2>
-			<ul>
-                <li><a href="${basePath}pages/loadBoard.html">Load Board</a></li>
-                <li><a href="#">Order Entry/Quote</a></li>
-                <li><a href="#">Order Search</a></li>
-					
-                <li><a href="#">Available Loads</a></li>
-                <li><a href="#">Dispatched Loads</a></li>
-                
-                <li><a href="#">Unit Search</a></li>
-                <li><a href="#">Unit Info</a></li>
-            </ul>
+        <h2>Assignments</h2>
+        <ul>
+            <li><a href="#">To-Do</a></li>
+            <li><a href="#">Completed</a></li>
+        </ul>
 
-            <h2>File Upload</h2>
-            <ul>
-                <li><a href="#">Upload File</a></li>
-                <li><a href="#">Manage Uploads</a></li>
-            </ul>
+        <h2>Dispatch Central</h2>
+        <ul>
+            <li><a href="${basePath}pages/loadBoard.html">Load Board</a></li>
+            <li><a href="#">Order Entry/Quote</a></li>
+            <li><a href="#">Order Search</a></li>
+            <li><a href="#">Available Loads</a></li>
+            <li><a href="#">Dispatched Loads</a></li>
+            <li><a href="#">Unit Search</a></li>
+            <li><a href="#">Unit Info</a></li>
+        </ul>
 
-            <h2>MercerTrac</h2>
-			<li>
-				<ul>
-					<li><a href="#">Track Dispatched Orders</a></li>
-				</ul>
-			</li>
-            
-			<li><a href="#"><i class="fa-solid fa-question"></i> Help</a></li>
-			<li><a href="#"><i class="fa-regular fa-envelope"></i> Report an Issue</a></li>
-		</ul>
-		
-		<ul>
-			<li><a href="#">Log in</a></li>
-		</ul>
-	</aside>
+        <h2>File Upload</h2>
+        <ul>
+            <li><a href="#">Upload File</a></li>
+            <li><a href="#">Manage Uploads</a></li>
+        </ul>
+
+        <h2>MercerTrac</h2>
+        <ul>
+            <li><a href="#">Track Dispatched Orders</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="#">Log in</a></li>
+        </ul>
+
+        
+    </div>
+</div>
 
 
     <nav id="breadcrumbNav">
@@ -102,37 +103,61 @@ document.addEventListener("DOMContentLoaded", function() {
     </ul>
 
     <ul>
-    <li><a href=""><i class="fa-solid fa-bars"></i></a></li>
+        <li><a href="#" id="menuToggle"><i class="fa-solid fa-bars"></i></a></li>
     </ul>
 	
 </nav>
     `
 
 
-// Insert the navbar into the document
-document.body.insertAdjacentHTML('afterbegin', navbarHTML);
+   // Insert the navbar into the document
+   document.body.insertAdjacentHTML('afterbegin', navbarHTML);
 
-// Now that the HTML is inserted, handle the breadcrumb logic
-const breadcrumbList = document.getElementById('breadcrumbList');
-const urlParts = currentPath.split('/').filter(Boolean); // Split the URL into parts, removing empty strings
+   const menuToggle = document.getElementById('menuToggle');
+   const modalSideNav = document.getElementById('modalSideNav');
+   const closeModal = document.getElementById('closeModal');
 
-// Add the top-level directory (if it exists)
-// if (urlParts.length > 1) {
-//     const topLevel = urlParts[0].replace('-', ' ').toUpperCase();
-//     breadcrumbList.insertAdjacentHTML('beforeend', `
-//         <li><i class="fa-solid fa-caret-right"></i></li>
-//         <li><a href="${basePath}/${urlParts[0]}/index.html">${topLevel}</a></li>
-//     `);
-// }
+   // Toggle modal on button click
+   menuToggle.addEventListener('click', function(e) {
+       e.preventDefault();
+       modalSideNav.style.display = 'block'; // Show the modal
+   });
 
-// Add the current page (third item in breadcrumb)
-if (urlParts.length > 1) {
-    const currentPage = urlParts[urlParts.length - 1];
-    const pageName = currentPage.substring(0, currentPage.lastIndexOf('.')).replace('-', ' ').toUpperCase(); // Remove extension
-    breadcrumbList.insertAdjacentHTML('beforeend', `
-        <li><i class="fa-solid fa-caret-right"></i></li>
-        <li><a href="${currentPath}">${pageName}</a></li>
-    `);
-}
+   // Close the modal when the close button is clicked
+   closeModal.addEventListener('click', function() {
+       modalSideNav.style.display = 'none'; // Hide the modal
+   });
 
+   // Close the modal when clicking outside of the modal content
+   window.addEventListener('click', function(event) {
+       if (event.target === modalSideNav) {
+           modalSideNav.style.display = 'none'; // Hide the modal
+       }
+   });
+
+
+   // Dropdown toggle functionality
+   const dropdowns = document.querySelectorAll('.dropdown');
+
+   dropdowns.forEach(dropdown => {
+       const parentLink = dropdown.parentElement.querySelector('a');
+       parentLink.addEventListener('click', function(e) {
+           e.preventDefault(); // Prevent default link behavior
+           dropdown.classList.toggle('active'); // Show/hide dropdown
+       });
+   });
+
+   // Breadcrumb logic
+   const breadcrumbList = document.getElementById('breadcrumbList');
+   const urlParts = currentPath.split('/').filter(Boolean); // Split the URL into parts
+
+   // Add the current page (third item in breadcrumb)
+   if (urlParts.length > 1) {
+       const currentPage = urlParts[urlParts.length - 1];
+       const pageName = currentPage.substring(0, currentPage.lastIndexOf('.')).replace('-', ' ').toUpperCase(); // Remove extension
+       breadcrumbList.insertAdjacentHTML('beforeend', `
+           <li><i class="fa-solid fa-caret-right"></i></li>
+           <li><a href="${currentPath}">${pageName}</a></li>
+       `);
+   }
 });
