@@ -41,14 +41,159 @@
         </tbody>
 
       </table>
-      
-
-      
-
     </details>
+
+    <div class="tabs">
+      <div class="tab-header">
+          <button class="tab-button active" data-tab="dispatched">Dispatched Orders</button>
+          <button class="tab-button" data-tab="canada">Canada Orders</button>
+          <button class="tab-button" data-tab="ups">UPS Orders</button>
+          <button class="tab-button" data-tab="government">Government Orders</button>
+          <button class="tab-button" data-tab="brokered">Brokered Orders</button>
+          <button class="tab-button" data-tab="permitted">Permitted Orders</button>
+          <button class="tab-button" data-tab="unit">Unit Detail</button>
+          <button class="tab-button" data-tab="available">Available Orders</button>
+          <button class="tab-button" data-tab="edi">EDI Orders</button>
+      </div>
+
+  
+      <div class="tab-content active" id="dispatched">
+        
+        <div class="button-container" id="dispatchedButtons">
+          <div class="left-buttons">
+              <button class="btn blue">View Alerts</button>
+              <button class="btn blue">Create Alert</button>
+          </div>
+          <div class="middle-buttons">
+              <button class="btn lightblue">Email Driver(s)</button>
+              <button class="btn lightblue">Edit Comments</button>
+              <button class="btn lightblue">History</button>
+              <button class="btn lightblue">Edit Order</button>
+              <button class="btn lightblue">Depart</button>
+              <button class="btn lightblue">On Site</button>
+              <button class="btn lightblue">Advance</button>
+              <button class="btn lightblue">Check Call</button>
+              <button class="btn lightblue">Void</button>
+              <button class="btn lightblue">Recent Flow</button>
+              <button class="btn lightblue">Pay Quote</button>
+              <button class="btn lightblue">Messaging</button>
+              <button class="btn lightblue">Split Trip</button>
+              <button class="btn lightblue">Split Payment</button>
+              <button class="btn lightblue">Prefs</button>
+              <button class="btn lightblue">Loan</button>
+              <button class="btn lightblue">Email Team</button>
+              <button class="btn lightblue">Unit Tracker</button>
+              <button class="btn lightblue">TONU</button>
+              <button class="btn lightblue">TRA</button>
+              <button class="btn lightblue">Example Route</button>
+              <button class="btn lightblue">Big Money Orders</button>
+              <button class="btn lightblue">Past Loads</button>
+              <button class="btn lightblue">Unit Info</button>
+              <button class="btn lightblue">Clear Load</button>
+              <button class="btn lightblue">Clear Empty</button>
+              <button class="btn lightblue">Clear Split</button>
+          </div>
+          <div class="right-buttons">
+              <button class="btn blue">Only Updated</button>
+              <button class="btn blue">Today's Activity</button>
+              <button class="btn blue">Refresh Data</button>
+              <button class="btn blue">Clear All Changes</button>
+          </div>
+      </div>
+
+      <div class="dispatched-orders">
+        <div class="table-header">
+            <h3>Dispatched Orders</h3>
+            <div class="table-actions">
+                <button class="btn lightblue">Columns</button>
+                <button class="btn lightblue">Export</button>
+            </div>
+        </div>
+    
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Note <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Note"></th>
+                        <th>Unit # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Unit #"></th>
+                        <th>Driver Name <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Driver Name"></th>
+                        <th>Order # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Order #"></th>
+                        <th>Early Pickup <i class="fa-solid fa-sort"></i></th>
+                        <th>Late Pickup <i class="fa-solid fa-sort"></i></th>
+                        <th>Origin <i class="fa-solid fa-sort"></i></th>
+                        <th>Destination <i class="fa-solid fa-sort"></i></th>
+                        <th>Next Stop <i class="fa-solid fa-sort"></i></th>
+                        <th>Next Stop ETA <i class="fa-solid fa-sort"></i></th>
+                        <th>Late Delivery <i class="fa-solid fa-sort"></i></th>
+                        <th>Miles Left <i class="fa-solid fa-sort"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="12" class="no-records">No records found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+          <!-- Dispatched Orders content goes here -->
+
+      </div>
+
+
+      <div class="tab-content" id="canada">
+          <!-- Canada Orders content goes here -->
+          <p>Canada Orders Content</p>
+      </div>
+      <div class="tab-content" id="ups">
+          <!-- UPS Orders content goes here -->
+          <p>UPS Orders Content</p>
+      </div>
+      <div class="tab-content" id="government">
+          <!-- Government Orders content goes here -->
+          <p>Government Orders Content</p>
+      </div>
+
+      <div class="tab-content" id="brokered">
+        <!-- Government Orders content goes here -->
+        <p>Brokered Orders Content</p>
+    </div>
+
+      <div class="tab-content" id="permitted">
+        <!-- Government Orders content goes here -->
+        <p>Permitted Orders Content</p>
+    </div>
+
+    <div class="tab-content" id="unit">
+      <!-- Government Orders content goes here -->
+      <p>Unit Details</p>
+    </div>
+
+    <div class="tab-content" id="available">
+      <!-- Government Orders content goes here -->
+      <p>Available Orders</p>
+  </div>
+
+  <div class="tab-content" id="edi">
+    <!-- Government Orders content goes here -->
+    <p>EDI Orders</p>
+</div>
+
+
+  </div>
+
+
+
   </main>
     
 </body>
 
 <script src="../js/navBar.js"></script>
+<script src="../js/tabs.js"></script>
+
 </html>
