@@ -390,12 +390,14 @@ details {
 		
 		.button-container {
 			flex-wrap: wrap;
+			gap: 1vw;
 		}
 	}
 	
 	.left-buttons, .middle-buttons, .right-buttons {
 		display: flex;
 		flex-wrap: wrap;
+		gap: .3vw;
 	}
 	
 	.left-buttons {
@@ -411,11 +413,12 @@ details {
 	.btn {
 		background-color: #d0e8f9; /* Default light blue color */
 		border: 1px solid #a0c0d0;
-		padding: 10px 15px;
-		margin: 5px;
+		padding: .5em 1em;
+		/* margin: 1vw; */
 		cursor: pointer;
-		font-size: 14px;
-		border-radius: 4px;
+		/* font-size: 14px; */
+		border-radius: 5px;
+		text-wrap: nowrap;
 	}
 	
 	.btn.blue {
@@ -494,7 +497,7 @@ thead th:hover {
 }
 
 thead th input[type="text"] {
-    width: 90%;
+    max-width: 100%;
     padding: 6px;
     margin-top: 5px;
     border: 1px solid #a0c0d0;
