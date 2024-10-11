@@ -54,7 +54,53 @@
           <button class="tab-button" data-tab="unit">Unit Detail</button>
           <button class="tab-button" data-tab="available">Available Orders</button>
           <button class="tab-button" data-tab="edi">EDI Orders</button>
+
+          <div class="tab-toggler">
+            <button class="toggle-btn">Tabs</button>
+            <div class="tab-options">
+              
+                <div>
+                    <input type="checkbox" id="canada" checked>
+                    <label for="canada">Canada Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ups" checked>
+                    <label for="ups">UPS Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="government" checked>
+                    <label for="government">Government Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="brokered" checked>
+                    <label for="brokered">Brokered Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="permitted" checked>
+                    <label for="permitted">Permitted Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="unit" checked>
+                    <label for="unit">Unit Detail</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="available" checked>
+                    <label for="available">Available Orders</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="edi" checked>
+                    <label for="edi">EDI Orders</label>
+                </div>
+                <div class="reset-uncheck">
+                  <button class="reset-btn">Reset Tabs</button>
+                  <button class="uncheck-btn">Uncheck All But Active</button>
+              </div>
+            </div>
+        </div>
+        
       </div>
+
+
 
   
       <div class="tab-content active" id="dispatched">
@@ -104,9 +150,47 @@
       <div class="dispatched-orders">
         <div class="table-header">
             <h3>Dispatched Orders</h3>
+            <div class="tab-toggler">
             <div class="table-actions">
-                <button class="btn lightblue">Columns</button>
+                <!-- <button class="btn lightblue toggle-columns-btn">Columns</button> -->
                 <button class="btn lightblue">Export</button>
+
+                <div class="column-options" style="display: none;">
+                  <div>
+                      <input type="checkbox" id="note" checked>
+                      <label for="note">Note</label>
+                  </div>
+                  <div>
+                      <input type="checkbox" id="unit-detail" checked>
+                      <label for="unit-detail">Unit #</label>
+                  </div>
+                  <div>
+                      <input type="checkbox" id="driver" checked>
+                      <label for="driver">Driver Name</label>
+                  </div>
+                  <div>
+                      <input type="checkbox" id="order" checked>
+                      <label for="order">Order #</label>
+                  </div>
+                  <div>
+                      <input type="checkbox" id="trip" checked>
+                      <label for="trip">Trip #</label>
+                  </div>
+                  <div>
+                      <input type="checkbox" id="carrier" checked>
+                      <label for="carrier">Carrier Code</label>
+                  </div>
+                  <!-- Add checkboxes for each of the other columns as needed -->
+                  
+                  <!-- New Button for Uncheck All But Active -->
+                  <div class="reset-uncheck">
+                    <button class="reset-btn">Reset Columns</button>
+                      <button class="uncheck-btn">Uncheck All But Active</button>
+                  </div>
+
+                  </div>  
+                </div>
+                  
             </div>
         </div>
     
@@ -114,20 +198,20 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Note <i class="fa-solid fa-sort"></i></th>
-                        <th>Unit # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Unit #"></th>
-                        <th>Driver Name <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Driver Name"></th>
-                        <th>Order # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Order #"></th>
-                        <th>Trip # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Trip #"></th>
-                        <th>Carrier Code <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Carrier Code"></th>
-                        <th>Early Pickup <i class="fa-solid fa-sort"></i></th>
-                        <th>Late Pickup <i class="fa-solid fa-sort"></i></th>
-                        <th>Origin <i class="fa-solid fa-sort"></i></th>
-                        <th>Destination <i class="fa-solid fa-sort"></i></th>
-                        <th>Next Stop <i class="fa-solid fa-sort"></i></th>
-                        <th>Projected ETA <i class="fa-solid fa-sort"></i></th>
-                        <th>Next Stop ETA <i class="fa-solid fa-sort"></i></th>
-                        <th>Early Delivery <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-note">Note <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-unit-detail active">Unit # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Unit #"></th>
+                        <th class="column-driver">Driver Name <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Driver Name"></th>
+                        <th class="column-order active">Order # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Order #"></th>
+                        <th class="column-trip">Trip # <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Trip #"></th>
+                        <th class="column-carrier">Carrier Code <i class="fa-solid fa-sort"></i><br><input type="text" placeholder="Carrier Code"></th>
+                        <th class="column-early">Early Pickup <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-late">Late Pickup <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-origin">Origin <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-destination">Destination <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-next-stop">Next Stop <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-proj-eta">Projected ETA <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-next-eta">Next Stop ETA <i class="fa-solid fa-sort"></i></th>
+                        <th class="column-early-delivery">Early Delivery <i class="fa-solid fa-sort"></i></th>
                         <th>Late Delivery <i class="fa-solid fa-sort"></i></th>
                         <th>Miles Left <i class="fa-solid fa-sort"></i></th>
                         <th>BOL Number <i class="fa-solid fa-sort"></i></th>
@@ -149,15 +233,25 @@
 
 
 
+
+
           <!-- Dispatched Orders content goes here -->
 
       </div>
 
-
       <div class="tab-content" id="canada">
-          <!-- Canada Orders content goes here -->
-          <p>Canada Orders Content</p>
-      </div>
+      
+  
+  
+      <p>matt</p>
+  
+  
+  
+
+  
+        </div>
+
+  
       <div class="tab-content" id="ups">
           <!-- UPS Orders content goes here -->
           <p>UPS Orders Content</p>

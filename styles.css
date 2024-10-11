@@ -328,7 +328,8 @@ details {
 
 	.tab-header {
 		display: flex;
-		overflow: auto;
+		/* overflow: auto; */
+		/* overflow: auto; */
 		gap: .5vw;
 		/* background-color: #f1f1f1; */
 		/* border-bottom: 2px solid #ccc; */
@@ -354,23 +355,124 @@ details {
 		/* font-weight: bold; */
 	}
 	
-	.tab-content {
-		max-width: 100%;
-		
-		overflow: auto;
-		display: none;
-		padding: 1em;
-		/* background-color: #f9f9f9; */
-		/* border: 1px solid #ccc; */
-	
-		border-radius: 0 5px 5px 5px;
-	}
-	
-	.tab-content.active {
-		display: block;
-	}
+
+
+
+
 	
 }
+
+.tab-content {
+	max-width: 100%;
+	
+	/* overflow: auto; */
+	display: none;
+	padding: 1em;
+	/* background-color: #f9f9f9; */
+	/* border: 1px solid #ccc; */
+
+	border-radius: 0 5px 5px 5px;
+}
+
+.tab-content.active {
+	display: block;
+}
+
+	/* Basic styling for the tab toggler button */
+.tab-toggler {
+    position: relative;
+    display: inline-block;
+
+	
+
+	.tabs button {
+		padding: 10px;
+		margin: 5px;
+		background-color: #4a5a61;
+		border: 1px solid #a0c0d0;
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	
+
+}
+
+	/* Show dropdown when tab-toggler button is clicked */
+	.tab-toggler.active .tab-options {
+		display: block;
+	}
+
+.toggle-btn {
+    background-color: #394449;
+    border: 1px solid #a0c0d0;
+    padding: 8px 12px;
+	margin-bottom: .5vh;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+	color: white;
+
+	.toggle-btn button:hover {
+		background-color: #14729e !important;
+	}
+}
+
+/* Dropdown for checkboxes */
+.tab-options, .column-options {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 4px;
+    z-index: 1;
+    top: 40px;
+    right: 0;
+
+	label, input {
+		text-wrap: nowrap;
+		cursor: pointer;
+	}
+
+
+}
+
+.reset-uncheck {
+	display: flex;
+	gap: 1vw;
+
+
+
+	.reset-btn, .uncheck-btn {
+		text-wrap: nowrap;
+		white-space: nowrap;
+	}
+
+	.reset-btn:hover, .uncheck-btn:hover {
+		/* background-color: #14729e; */
+		cursor: pointer;
+
+	}
+
+}
+
+
+
+.tab-options div, .column-options div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.tab-options input[type="checkbox"], .column-options input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* Tab styles */
+/* .tabs {
+    margin-top: 20px;
+} */
+
 
 
 /* #dispatchedButtons { */
@@ -392,6 +494,33 @@ details {
 			flex-wrap: wrap;
 			gap: 1vw;
 		}
+
+	.tabs {
+
+		.tab-header {
+
+
+		
+
+		}
+
+		.tab-button {
+			display: none; /* Hide all tab buttons */
+		}
+
+		.tab-button.active {
+			display: inline-block; /* Show only the active tab */
+		}
+	
+
+
+	}
+
+    /* The tab-toggler should always remain visible */
+    .tab-toggler {
+        display: block;
+    }
+
 	}
 	
 	.left-buttons, .middle-buttons, .right-buttons {
